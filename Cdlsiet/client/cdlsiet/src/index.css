@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-img {
+    background-image: url('images/cdlsiet.webp');
+    height: 70vh;
+}
+
+.bg-img2 {
+    background: url("images/postbackground.jpg") no-repeat center;
+    background-size: cover;
+    border: 5px #ecf3f2 double;
+}
+
+.bg-about {
+    background-image: url('images/students.jpg');
+    /* opacity: 0.7; */
+}
+
+.menu {
+    background: #080707;
+    position: absolute;
+    top: 60px;
+    left: -500px;
+    transition: 0.5s;
+    padding: 20px;
+    height: 82vh;
+    width: 17vw;
+}
+
+.menu-btn {
+    position: absolute;
+}
+
+.menu ul {}
+
+.menu ul li {
+    padding: 18px 20px;
+}
+
+:hover.menu ul li {}
+
+.activeMenu {
+    left: -38px;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.modalOverlay {
+    width: 100%;
+    position: fixed;
+    display: none;
+    height: 100%;
+    z-index: 1;
+    background-color: #F42B43;
+}
+
+:hover.modalOverlay {
+
+    background-color: #12871A;
+}
+
+.ModalDiv {
+    width: 500px;
+    height: 450px;
+    position: fixed;
+    left: 50%;
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    transition: 0.3s;
+    top: -600px;
+    transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+}
+
+.showModalDiv {
+    top: 50%;
+}
+
+.en {
+    border: 4px #F42B43 solid;
+    background-color: whitesmoke;
+    padding: 4px;
+    position: fixed;
+    right: -33px;
+    top: 200px;
+    transform: rotate(90deg);
+}
+
+.modalShow {
+    display: block;
+}
