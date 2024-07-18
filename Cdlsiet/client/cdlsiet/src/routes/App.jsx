@@ -1,5 +1,4 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Enquire from '../components/Enquire'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import PostListProvider from "../Store/post-list-store"

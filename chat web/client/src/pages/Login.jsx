@@ -1,7 +1,7 @@
-import { Button, Container, Paper, Stack, TextField, Typography, Avatar, IconButton } from "@mui/material"
+import { useFileHandler, useInputValidation } from '6pp'
 import { CameraAlt as CameraAltIcon } from "@mui/icons-material"
+import { Avatar, Button, Container, IconButton, Paper, Stack, TextField, Typography } from "@mui/material"
 import { useState } from "react"
-import { useFileHandler, useInputValidation, useStrongPassword } from '6pp'
 import { VisuallyHiddenInput } from "../components/styles/StyledComponent"
 import { usernameValidator } from "../utils/validator"
 const Login = () => {
