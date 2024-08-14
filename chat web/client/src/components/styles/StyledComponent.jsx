@@ -38,7 +38,7 @@ border-radius: 1.5rem;
 background-color: ${grayColor};
 font-size: 1.1rem;
 `
-export const curveButton = styled("button")`
+export const CurveButton = styled("button")`
 border-radius: 1.5rem;
 padding: 1rem 2rem;
 border: none,

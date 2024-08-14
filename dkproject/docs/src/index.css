@@ -9,18 +9,3 @@
 ::-webkit-scrollbar {
     display: none;
 }
-
-.menu {
-    position: absolute;
-    display: flex;
-    height: 30vh;
-    top: -500px;
-    width: 100vw;
-    background-color: aquamarine;
-    transition: 0.5s;
-}
-
-.img-home {
-    background-image: url('images/homeback.jpg');
-    opacity: ;
-}
