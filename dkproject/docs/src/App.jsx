@@ -1,5 +1,9 @@
 // src/App.jsx
+<<<<<<< HEAD
 import { useEffect, useRef, useState } from 'react';
+=======
+import React, { useState, useRef, useEffect } from 'react';
+>>>>>>> 9c7c54a77db71302f0321598fcdcd5d85f8edb8f
 import { auth, RecaptchaVerifier, signInWithPhoneNumber } from './firebase';
 
 function App() {
@@ -103,4 +107,8 @@ function App() {
   );
 }
 
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+>>>>>>> 9c7c54a77db71302f0321598fcdcd5d85f8edb8f
