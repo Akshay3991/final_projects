@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     if (!window.recaptchaVerifier) {
-      window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
+      window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
         size: 'invisible',
         callback: (response) => {
           console.log('reCAPTCHA solved');
@@ -19,7 +19,7 @@ function App() {
         'expired-callback': () => {
           console.log('reCAPTCHA expired');
         }
-      }, auth);
+      });
     }
   }, []);
 
