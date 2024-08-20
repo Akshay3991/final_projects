@@ -45,7 +45,6 @@ const notesListReducer = (currnotesList, action) => {
   }
   return newnotesList;
 }
-// eslint-disable-next-line react/prop-types
 const PostListProvider = ({ children }) => {
 
   const [postList, dispatchPostList] = useReducer(
