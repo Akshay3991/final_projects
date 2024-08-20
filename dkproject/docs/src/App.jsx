@@ -1,17 +1,18 @@
 // src/App.jsx
 import { useState, useRef, useEffect } from 'react';
-import { auth, RecaptchaVerifier, signInWithPhoneNumber } from './firebase';
+import { auth, RecaptchaVerifier, signInWithPhoneNumber, PhoneAuthProvider, signInWithCredential } from './firebase';
 
 function App() {
   const [mobileNumber, setMobileNumber] = useState('');
   const [showOtpInput, setShowOtpInput] = useState(false);
   const [verificationId, setVerificationId] = useState('');
   const [otp, setOtp] = useState(Array(6).fill(''));
+  const [authStatus, setAuthStatus] = useState(null); // New state for authentication status
   const inputs = useRef([]);
 
   useEffect(() => {
     if (!window.recaptchaVerifier) {
-      window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
+      window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
         size: 'invisible',
         callback: (response) => {
           console.log('reCAPTCHA solved');
@@ -19,7 +20,7 @@ function App() {
         'expired-callback': () => {
           console.log('reCAPTCHA expired');
         }
-      }, auth);
+      });
     }
   }, []);
 
@@ -54,17 +55,34 @@ function App() {
     e.preventDefault();
     try {
       const credential = PhoneAuthProvider.credential(verificationId, otp.join(''));
-      await auth.signInWithCredential(credential);
-      alert('Successfully signed in!');
+      await signInWithCredential(auth, credential); // Correct method to use
+      setAuthStatus('success'); // Set status to success
     } catch (error) {
       console.error('Error during OTP verification', error);
+      setAuthStatus('failure'); // Set status to failure
     }
   };
+
+  const SuccessPage = () => (
+    <div style={{ textAlign: 'center' }}>
+      <h2>Success!</h2>
+      <p>You have successfully signed in.</p>
+    </div>
+  );
+
+  const FailurePage = () => (
+    <div style={{ textAlign: 'center' }}>
+      <h2>Failure</h2>
+      <p>There was an error during the sign-in process. Please try again.</p>
+    </div>
+  );
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
       <div id="recaptcha-container"></div>
-      {!showOtpInput ? (
+      {authStatus === 'success' && <SuccessPage />}
+      {authStatus === 'failure' && <FailurePage />}
+      {authStatus === null && !showOtpInput && (
         <form onSubmit={handleMobileNumberSubmit} style={{ textAlign: 'center' }}>
           <h3>Enter your mobile number</h3>
           <input
@@ -78,7 +96,8 @@ function App() {
             Send OTP
           </button>
         </form>
-      ) : (
+      )}
+      {authStatus === null && showOtpInput && (
         <form onSubmit={handleOtpSubmit}>
           <h3>Enter the OTP sent to your mobile number</h3>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -102,6 +121,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
