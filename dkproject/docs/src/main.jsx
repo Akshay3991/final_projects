@@ -1,17 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import Home from './components/Home.jsx'
+import Cart from './components/Cart.jsx'
+import Otp from './components/Otp.jsx'
+import Orders from './components/Orders.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    // children: [
-    //   {
-    //     path: "/", element: <Num />
-    //   },
-    // ],
+    children: [
+      {
+        path: "/", element: <Home />
+      },
+      {
+        path: "/cart", element: <Cart />
+      },
+      {
+        path: "/otp", element: <Otp />
+      },
+      {
+        path: "/orders", element: <Orders />
+      },
+    ],
   },
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
