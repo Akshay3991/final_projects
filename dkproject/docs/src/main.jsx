@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import App from './routes/App.jsx'
 import Home from './components/Home.jsx'
 import Cart from './components/Cart.jsx'
 import Otp from './components/Otp.jsx'
