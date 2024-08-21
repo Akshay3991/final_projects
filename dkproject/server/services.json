@@ -1,0 +1,29 @@
+{
+  "services": [
+    {
+      "id": "001",
+      "image": "images/1.jpg",
+      "service_name": "service02"
+    },
+    {
+      "id": "002",
+      "image": "images/2.jpg",
+      "service_name": "service02"
+    },
+    {
+      "id": "003",
+      "image": "images/2.jpg",
+      "service_name": "service02"
+    },
+    {
+      "id": "004",
+      "image": "images/2.jpg",
+      "service_name": "service02"
+    },
+    {
+      "id": "005",
+      "image": "images/2.jpg",
+      "service_name": "service02"
+    }
+  ]
+}
