@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { servicesActions } from "../store/serviceSlice";
 import { fetchStatusActions } from "../store/fetchStatusSlice";
+import { useEffect } from "react";
 
 function FetchData() {
   const fetchStatus = useSelector((store) => store.fetchStatus);
