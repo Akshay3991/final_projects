@@ -8,6 +8,8 @@ import Cart from "./routes/Cart.jsx";
 import Otp from "./components/Otp.jsx";
 import Orders from "./components/Orders.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import dataStore from "./store/index.js";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={dataStore}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
