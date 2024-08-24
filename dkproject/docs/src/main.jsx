@@ -6,6 +6,7 @@ import App from "./routes/App.jsx";
 import Home from "./routes/Home.jsx";
 import Cart from "./routes/Cart.jsx";
 import Otp from "./components/Otp.jsx";
+import Contact from "./components/Contact.jsx";
 import Orders from "./components/Orders.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: "/cart",
