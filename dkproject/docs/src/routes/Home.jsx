@@ -3,6 +3,8 @@ import HomeService from "../components/HomeService";
 
 const Home = () => {
   const services = useSelector((store) => store.services);
+  // console.log(services);
+
   return (
     <main>
       <div>
