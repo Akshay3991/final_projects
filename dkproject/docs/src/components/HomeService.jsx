@@ -1,13 +1,14 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../store/cartSlice";
 import { GrAddCircle } from "react-icons/gr";
 import { AiFillDelete } from "react-icons/ai";
 
 const HomeService = ({ service }) => {
+  // console.log(service);
+
   const dispatch = useDispatch();
   const cartServices = useSelector((store) => store.cart);
-  const elementFound = cartServices.indexof(service.id) >= 0;
+  const elementFound = cartServices.indexOf(service.id) >= 0;
 
   const handleAddToCart = () => {
     dispatch(cartActions.addToCart(service.id));
@@ -15,7 +16,6 @@ const HomeService = ({ service }) => {
   const handleRemove = () => {
     dispatch(cartActions.removeFromCart(service.id));
   };
-
   return (
     <div>
       {/* design */}
