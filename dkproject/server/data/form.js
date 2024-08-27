@@ -9,7 +9,7 @@ async function getStoredFormData() {
   return storeFormData;
 }
 
-function storeFormData(services) {
+function storeFormData(details) {
   return fs.writeFile("form.json", JSON.stringify({ details: details || [] }));
 }
 
