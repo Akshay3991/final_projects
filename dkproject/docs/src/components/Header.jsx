@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { FaCartArrowDown, FaOpencart } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
 const Header = () => {
+  const cart = useSelector((store) => store.cart);
   return (
     <div>
       <header>
@@ -15,53 +17,50 @@ const Header = () => {
               LOGO
             </Link>
           </div>
-          <div className=" w-[70%] ">
-            <div className=" w-[70%] ">
-              <ul className="flex gap-[40px]  ">
-                <Link
-                  to="/"
-                  className="no-underline text-[white] hover:underline  text-[23px] font-serif font-black mt-[20px]"
-                >
-                  <li className="flex gap-[10px]">
-                    <FaHome className="text-[30px] font-bold text-[green]" />
-                    Home
-                  </li>
-                </Link>
-                <input
-                  type="text"
-                  className="bg-[#e44602] mt-[10px] w-[40%] border-[3px] pl-[200px] border-[white] rounded-[20px]"
-                />
-                <Link
-                  to="/contact"
-                  className="no-underline  text-[white] hover:underline  text-[23px] font-serif font-black mt-[20px]"
-                >
-                  <li className="flex gap-[10px]">
-                    <BsFillTelephoneFill className="text-[30px] font-bold text-[#f48004]" />
-                    Contact Us
-                  </li>
-                </Link>
-              </ul>
-            </div>
+          <div className="flex gap-[40px]  w-[70%] ">
+            <Link
+              to="/"
+              className="no-underline flex gap-[10px] text-[white] hover:underline  text-[23px] font-serif font-black mt-[20px]"
+            >
+              <FaHome className="text-[30px] font-bold text-[green]" />
+              Home
+            </Link>
+            <input
+              type="text"
+              className="bg-[#e44602] mt-[10px] w-[40%] border-[3px] pl-[200px] border-[white] rounded-[20px]"
+            />
+            <Link
+              to="/contact"
+              className="no-underline flex gap-[10px]  text-[white] hover:underline  text-[23px] font-serif font-black mt-[20px]"
+            >
+              <BsFillTelephoneFill className="text-[30px] font-bold text-[#f48004]" />
+              Contact Us
+            </Link>
+            <Link
+              to="/form"
+              className="no-underline flex gap-[10px] text-[white] hover:underline  text-[23px] font-serif font-black mt-[20px]"
+            >
+              <span className="">Form</span>
+            </Link>
           </div>
-          <div className="w-[15%]  bg-[green] pt-[20px] ">
-            <ul className="flex gap-[30px] ">
-              <Link
-                to="/orders"
-                className="no-underline  text-[whitesmoke] text-[30px]"
-              >
-                <li>
-                  <FaOpencart />
-                </li>
-              </Link>
-              <Link
-                to="/cart"
-                className="no-underline text-[whitesmoke] text-[30px]"
-              >
-                <li>
-                  <FaCartArrowDown />
-                </li>
-              </Link>
-            </ul>
+          <div className="w-[15%] flex gap-[30px] bg-[green] pt-[20px] ">
+            <Link
+              to="/orders"
+              className="no-underline flex gap-[10px]  text-[whitesmoke] text-[30px]"
+            >
+              <FaOpencart />
+              <span className="action_name">Orders</span>
+            </Link>
+            <Link
+              to="/cart"
+              className="no-underline flex gap-[10px] text-[whitesmoke] text-[30px]"
+            >
+              <FaCartArrowDown />
+              <span className="">Cart</span>
+              {cart.length !== 0 && (
+                <span className="bg-[red]">{cart.length}</span>
+              )}
+            </Link>
           </div>
         </nav>
       </header>
