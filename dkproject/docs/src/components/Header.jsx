@@ -36,12 +36,6 @@ const Header = () => {
               <BsFillTelephoneFill className="text-[30px] font-bold text-[#f48004]" />
               Contact Us
             </Link>
-            <Link
-              to="/form"
-              className="no-underline flex gap-[10px] text-[white] hover:underline  text-[23px] font-serif font-black mt-[20px]"
-            >
-              <span className="">Form</span>
-            </Link>
           </div>
           <div className="w-[15%] flex gap-[30px] bg-[green] pt-[20px] ">
             <Link
