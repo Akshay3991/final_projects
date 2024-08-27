@@ -4,6 +4,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./routes/App.jsx";
 import Home from "./routes/Home.jsx";
+import FormData from "./components/FormData.jsx";
 import Cart from "./routes/Cart.jsx";
 import Otp from "./components/Otp.jsx";
 import Contact from "./components/Contact.jsx";
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/form",
+        element: <FormData />,
       },
       {
         path: "/contact",
