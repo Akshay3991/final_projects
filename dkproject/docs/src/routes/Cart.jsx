@@ -1,12 +1,12 @@
-import cartService from "../components/cartService";
-import cartSummary from "../components/cartSummary";
+import CartService from "../components/CartService";
+import CartSummary from "../components/CartSummary";
 import { useSelector } from "react-redux";
 
 const Cart = () => {
   const cartServices = useSelector((state) => state.cart);
   const services = useSelector((state) => state.services);
   const finalServices = services.filter((service) => {
-    const serviceIndex = cartServices.indexof(service.id);
+    const serviceIndex = cartServices.indexOf(service.id);
     return serviceIndex >= 0;
   });
 
@@ -14,10 +14,12 @@ const Cart = () => {
     <main>
       <div>
         {finalServices.map((service) => (
-          <cartService service={service} key={service.id} />
+          <CartService service={service} key={service.id} />
         ))}
       </div>
-      <cartSummary />
+      <div>
+        <CartSummary />
+      </div>
     </main>
   );
 };
