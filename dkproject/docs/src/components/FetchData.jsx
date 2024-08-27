@@ -1,7 +1,7 @@
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { servicesActions } from "../store/serviceSlice";
 import { fetchStatusActions } from "../store/fetchStatusSlice";
-import { useEffect } from "react";
 
 function FetchData() {
   const fetchStatus = useSelector((store) => store.fetchStatus);
@@ -17,7 +17,7 @@ function FetchData() {
       .then((res) => res.json())
       .then(({ services }) => {
         dispatch(fetchStatusActions.markFetchDone());
-        dispatch(fetchStatusActions.markFetchingStarted());
+        dispatch(fetchStatusActions.markFetchingFinished());
         dispatch(servicesActions.addInitialServices(services));
       });
     return () => {
