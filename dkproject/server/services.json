@@ -3,27 +3,37 @@
     {
       "id": "001",
       "image": "images/1.jpg",
-      "service_name": "service02"
+      "service_name": "service01",
+      "description": "bhot mast service milega on time ek bar mauka dijiye -Shubam ojha",
+      "original_price": 300
     },
     {
       "id": "002",
       "image": "images/2.jpg",
-      "service_name": "service02"
+      "service_name": "service02",
+      "description": "bhot mast service milega on time ek bar mauka dijiye -Shubam ojha",
+      "original_price": 300
     },
     {
       "id": "003",
       "image": "images/2.jpg",
-      "service_name": "service02"
+      "service_name": "service03",
+      "description": "bhot mast service milega on time ek bar mauka dijiye -Shubam ojha",
+      "original_price": 300
     },
     {
       "id": "004",
       "image": "images/2.jpg",
-      "service_name": "service02"
+      "service_name": "service04",
+      "description": "bhot mast service milega on time ek bar mauka dijiye -Shubam ojha",
+      "original_price": 300
     },
     {
       "id": "005",
       "image": "images/2.jpg",
-      "service_name": "service02"
+      "service_name": "service05",
+      "description": "bhot mast service milega on time ek bar mauka dijiye -Shubam ojha",
+      "original_price": 300
     }
   ]
 }
